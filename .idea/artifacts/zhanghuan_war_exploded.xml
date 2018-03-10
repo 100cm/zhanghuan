@@ -1,0 +1,46 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="zhanghuan:war exploded">
+    <output-path>$PROJECT_DIR$/target/zhanghuan</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="zhanghuan" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: com.bladejava:blade-mvc:2.0.6-BETA" />
+          <element id="library" level="project" name="Maven: com.bladejava:blade-asm:0.0.1" />
+          <element id="library" level="project" name="Maven: com.bladejava:blade-log:0.0.6" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.21" />
+          <element id="library" level="project" name="Maven: io.netty:netty-codec-http:4.1.18.Final" />
+          <element id="library" level="project" name="Maven: io.netty:netty-codec:4.1.18.Final" />
+          <element id="library" level="project" name="Maven: io.netty:netty-handler:4.1.18.Final" />
+          <element id="library" level="project" name="Maven: io.netty:netty-buffer:4.1.18.Final" />
+          <element id="library" level="project" name="Maven: io.netty:netty-common:4.1.18.Final" />
+          <element id="library" level="project" name="Maven: io.netty:netty-transport:4.1.18.Final" />
+          <element id="library" level="project" name="Maven: io.netty:netty-resolver:4.1.18.Final" />
+          <element id="library" level="project" name="Maven: org.javalite:activejdbc:1.4.13" />
+          <element id="library" level="project" name="Maven: org.javalite:javalite-common:1.4.13" />
+          <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-core-asl:1.9.13" />
+          <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.9.13" />
+          <element id="library" level="project" name="Maven: org.javalite:app-config:1.4.13" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.41" />
+          <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
+          <element id="library" level="project" name="Maven: com.bladejava:blade-jdbc:0.2.2-RELEASE" />
+          <element id="library" level="project" name="Maven: org.sql2o:sql2o:1.6.0-RC3" />
+          <element id="library" level="project" name="Maven: com.bladejava:blade-template-jetbrick:0.1.2" />
+          <element id="library" level="project" name="Maven: com.bladejava:blade-template-freemarker:0.0.1-RELEASE" />
+          <element id="library" level="project" name="Maven: org.freemarker:freemarker:2.3.10" />
+          <element id="library" level="project" name="Maven: com.github.subchen:jetbrick-template:2.1.5" />
+          <element id="library" level="project" name="Maven: com.github.subchen:jetbrick-commons:2.1.4" />
+          <element id="library" level="project" name="Maven: org.antlr:antlr4-runtime:4.3" />
+          <element id="library" level="project" name="Maven: org.abego.treelayout:org.abego.treelayout.core:1.0.1" />
+          <element id="library" level="project" name="Maven: org.antlr:antlr4-annotations:4.3" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/zhanghuan/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="zhanghuan/web/Web" />
+    </root>
+  </artifact>
+</component>

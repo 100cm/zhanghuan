@@ -1,0 +1,47 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/generator'
+require "active_record"
+require "mysql2"
+ActiveRecord::Base.logger = Logger.new(STDOUT)
+ActiveRecord::Base.establish_connection (
+                                            {
+                                                :adapter => 'mysql2',
+                                                :encoding => 'utf8',
+                                                :reconnect => true,
+                                                :database => 'zhanghuan',
+                                                :pool => 5,
+                                                :username => 'root',
+                                                :password => 'root',
+                                                :host => '127.0.0.1',
+                                                :socket => '/tmp/mysql.sock'
+
+                                            }
+                                        )
+
+unless ARGV.empty?
+  case
+    when ARGV[0] == 'new' && ARGV[1]
+      generate_project ARGV[1]
+    when ARGV[0] == 'g' && ARGV[1] == 'controller' && ARGV[2]
+      generate_controller ARGV[2]
+    when ARGV[0] == 'g' && ARGV[1] == 'model' && ARGV[2]
+      generate_model ARGV[2]
+    when ARGV[0] == 'g' && ARGV[1] == 'migration' && ARGV[2]
+      generate_migration ARGV[2]
+    when ARGV[0] == 'db:migrate'
+      ActiveRecord::Migrator.migrate('./db/migrations')
+      # File.open('./db/schema.rb', 'w') do |file|
+      #   ActiveRecord::SchemaDumper.dump(ActiveRecord::Base.connection, file)
+      # end
+    when ARGV[0] == 'db:rollback'
+      ActiveRecord::Migrator.rollback('./db/migrations')
+      File.open('./db/schema.rb', 'w') do |file|
+        ActiveRecord::SchemaDumper.dump(ActiveRecord::Base.connection, file)
+      end
+    when ARGV[0] == 'c' || ARGV[0] == 'console'
+      `irb -r ./app.rb`
+  end
+end
+
+ActiveRecord::Base.clear_active_connections!
